@@ -1,7 +1,25 @@
 // global variables
 let humanScore = 0, computerScore = 0;
+const btnsWrapper = document.querySelector(".btns-wrapper");
+const results = document.querySelector("#resutlts")
 
 let cheat = 1;
+
+btnsWrapper.addEventListener("click", function(e) {
+    const target = e.target;
+
+    switch (target.id) {
+        case "btn-rock": {
+            playRound(getComputerChoice(), getHumanChoice())
+        }
+        case "btn-paper": {
+            playRound(getComputerChoice(), getHumanChoice())
+        }
+        case "btn-scissor": {
+            playRound(getComputerChoice(), getHumanChoice())
+        }
+    }
+})
 
 function getComputerChoice() {
 
@@ -29,7 +47,6 @@ function getHumanChoice() {
         humanChoice.toUpperCase() !== "PAPER" ||
         humanChoice.toUpperCase() !== "SCISSORS") {
             alert("Not a valid choice, enter Rock, Paper or Scissors");
-            playGame();
     } else {
         return humanChoice.toUpperCase()
     }
@@ -37,15 +54,13 @@ function getHumanChoice() {
 
 function playRound(computerChoice, HumanChoice ) {
     if (computerChoice == HumanChoice) {
-        return "The game is tied"
+        results.textContent =  "The game is tied";
     } else {
-      return  "hu hu hu"
+      results.textContent = "hu hu hu";
     }
 }
 
-function playGame() {
-    
-    console.log(playRound(playRound(getComputerChoice(), getHumanChoice())))
-}
 
-playGame();
+    
+    
+

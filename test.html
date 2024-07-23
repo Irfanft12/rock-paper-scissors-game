@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="btns-wrapper">
@@ -11,7 +16,19 @@
         <button id="btn-paper">Paper</button>
         <button id="btn-scissor">Scissor</button>
     </div>
-    <div id="results"></div>
-    <script src="./index.js"></script>
+    
+    
+     <div id="admitted"></div>
+     <div id="refused"></div>
+
+    <script>
+        let num;
+        do {
+            num = prompt("Enter a number greater than 100", 0)
+        } while(num <= 100 && num);
+
+        
+
+    </script>
 </body>
 </html>
